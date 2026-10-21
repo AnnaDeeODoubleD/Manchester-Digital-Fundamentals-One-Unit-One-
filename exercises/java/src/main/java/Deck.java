@@ -1,0 +1,23 @@
+package cards;
+public class Deck {
+
+        private final PlayingCards[] cards = new PlayingCards[52];
+
+        public Deck() {
+            int index = 0;
+            for (int suit = 0; suit < 4; suit++) {
+                for (int value = 1; value <= 13; value++) {
+                    cards[index++] = new PlayingCards(suit, value);
+                }
+            }
+        }
+
+        public String[] getCards() {
+            String[] cardNames = new String[52];
+            for (int i = 0; i < cards.length; i++) {
+                cardNames[i] = cards[i].getFormatted();
+            }
+            return cardNames;
+        }
+    }
+
